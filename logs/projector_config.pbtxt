@@ -1,0 +1,4 @@
+embeddings {
+  tensor_name: "Variable:0"
+  metadata_path: "D:/stuff/test/bank/logs/metadata.txt"
+}

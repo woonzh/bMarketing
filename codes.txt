@@ -1,0 +1,45 @@
+General
+series to pandas -> series.to_frame()
+drop column -> df.drop(inplace=True, drop=True)
+df corr -> df.corr()
+
+sklearn general
+scaling -> StandardScaler().fit_transform(x)
+accuracy_score(prediction,self.test[name]['y'])
+
+gridsearch
+params={
+	'a':[..,..],
+	'b':[..,..,..]
+}
+grid=GridSearchCV(model, param_grid=params, cv=2)
+grid.fit(x,y)
+clf=RandomForestClassifier(**grid.best_params_)
+
+models
+from sklearn.decomposition import PCA
+from sklearn.linear_model import LogisticRegression
+from sklearn.ensemble import RandomForestClassifier
+from sklearn import svm
+import xgboost as xgb
+
+PCA
+pca=PCA(n_components=components)
+pc = pca.fit_transform(df)
+var=np.var(pc,axis=0)
+varRatio=var/np.sum(var)
+
+SVC
+clf=svm.SVC(probability=True, kernel='linear', decision_function_shape='ovo', gamma=1e-1, C=0.01)
+clf.fit(train_x,train_y)
+prediction=clf.predict(test_x)
+
+XGBoost
+train = =xgb.DMatrix(x,y)
+params = {
+	'eta':0.3,
+	'max_depth':6,
+	'objective':'binary:logistics'
+}
+model=xgb.train(params, train, steps)
+model.predict(test)
